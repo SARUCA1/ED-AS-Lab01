@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Lab01_AS.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,8 @@ namespace Lab01_AS.Controllers
         // GET: PersonController
         public ActionResult Index()
         {
-            return View();
+            var list = new List<PersonModel>();
+            return View(list);
         }
 
         // GET: PersonController/Details/5
