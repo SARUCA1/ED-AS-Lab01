@@ -1,4 +1,5 @@
-﻿using Lab01_AS.Models;
+﻿using Lab01_AS.Data;
+using Lab01_AS.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,21 +11,11 @@ namespace Lab01_AS.Controllers
 {
     public class PersonController : Controller
     {
-        private readonly List<PersonModel> list = new List<PersonModel>
-        {
-            new PersonModel
-            {
-                ID = 1,
-                Name = "Alejandro",
-                LastName = "Gil",
-                PhoneNumber = 12345678,
-                Description = "Persona"
-            }
-        };
+       
         // GET: PersonController
         public ActionResult Index()
         {
-            return View(list);
+            return View(DataManagement.Instance.personlist);
         }
 
         // GET: PersonController/Details/5
