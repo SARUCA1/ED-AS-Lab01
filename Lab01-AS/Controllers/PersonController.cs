@@ -48,7 +48,8 @@ namespace Lab01_AS.Controllers
         // GET: PersonController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var model = DataManagement.Instance.personlist.Find(person => person.ID == id);
+            return View(model);
         }
 
         // POST: PersonController/Edit/5
@@ -69,6 +70,7 @@ namespace Lab01_AS.Controllers
         // GET: PersonController/Delete/5
         public ActionResult Delete(int id)
         {
+            var model = DataManagement.Instance.personlist.Find(person => person.ID == id);
             return View();
         }
 
