@@ -21,6 +21,7 @@ namespace Lab01_AS.Controllers
         // GET: PersonController/Details/5
         public ActionResult Details(int id)
         {
+            var model = DataManagement.Instance.personlist.Find(Person => Person.Id == id);
             return View();
         }
 
@@ -37,6 +38,14 @@ namespace Lab01_AS.Controllers
         {
             try
             {
+                PersonModel.Save(new PersonModel
+                {
+                    Id = int.Parse(collection["Id"]),
+                    Name = collection["Name"],
+                    LastName = collection["Last Name"],
+                    PhoneNumber = int.Parse(collection["Phone Number"]),
+                    Description = collection["Description"],
+                });
                 return RedirectToAction(nameof(Index));
             }
             catch

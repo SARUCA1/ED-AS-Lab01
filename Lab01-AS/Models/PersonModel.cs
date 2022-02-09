@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lab01_AS.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -8,7 +9,7 @@ namespace Lab01_AS.Models
 {
     public class PersonModel
     {
-        public int ID { get; set; }
+        public int Id { get; internal set; }
         [MaxLength(50)]
         public string Name { get; set; }
         [MaxLength(50)]
@@ -17,5 +18,12 @@ namespace Lab01_AS.Models
         public int PhoneNumber { get; set; }
         [MaxLength(50)]
         public string Description { get; set; }
+
+
+        public static void Save(PersonModel model)
+        {
+            DataManagement.Instance.personlist.Add(model);
+        }
+
     }
 }
