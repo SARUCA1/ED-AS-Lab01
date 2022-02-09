@@ -26,7 +26,7 @@ namespace Lab01_AS.Data
         {
             new PersonModel
             {
-                ID = 1,
+                Id = 1,
                 Name = "Alejandro",
                 LastName = "Gil",
                 PhoneNumber = 12345678,
