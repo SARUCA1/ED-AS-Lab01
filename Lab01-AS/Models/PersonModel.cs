@@ -17,5 +17,9 @@ namespace Lab01_AS.Models
         public int PhoneNumber { get; set; }
         [MaxLength(50)]
         public string Description { get; set; }
+        public static bool Edit(PersonModel model)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
