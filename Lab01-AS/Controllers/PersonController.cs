@@ -10,20 +10,20 @@ namespace Lab01_AS.Controllers
 {
     public class PersonController : Controller
     {
+        private readonly List<PersonModel> list = new List<PersonModel>
+        {
+            new PersonModel
+            {
+                ID = 1,
+                Name = "Alejandro",
+                LastName = "Gil",
+                PhoneNumber = 12345678,
+                Description = "Persona"
+            }
+        };
         // GET: PersonController
         public ActionResult Index()
         {
-            var list = new List<PersonModel>
-            {
-                new PersonModel
-                {
-                    ID = 1,
-                    Name = "Alejandro",
-                    LastName = "Gil",
-                    PhoneNumber = 12345678,
-                    Description = "Persona"
-                }
-            };
             return View(list);
         }
 
