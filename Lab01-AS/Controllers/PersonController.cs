@@ -13,7 +13,17 @@ namespace Lab01_AS.Controllers
         // GET: PersonController
         public ActionResult Index()
         {
-            var list = new List<PersonModel>();
+            var list = new List<PersonModel>
+            {
+                new PersonModel
+                {
+                    ID = 1,
+                    Name = "Alejandro",
+                    LastName = "Gil",
+                    PhoneNumber = 12345678,
+                    Description = "Persona"
+                }
+            };
             return View(list);
         }
 
